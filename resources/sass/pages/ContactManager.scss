@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Variables (matching Home.scss)
+$primary-pink: #ff3e6c;
+$soft-pink: #ff9bb5;
+$dark-pink: #d81b60;
+$light-pink: #fff0f5;
+$lavender: #e6e6fa;
+$mint: #b4e9e2;
+$peach: #ffd8c9;
+$dark-text: #333333;
+$white: #ffffff;
+$shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$transition: all 0.3s ease;
+
+.contact-manager-layout {
+  min-height: 100vh;
+  background: linear-gradient(135deg, $light-pink 0%, $lavender 60%, $primary-pink 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-manager-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 3rem auto 2rem auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(255, 62, 108, 0.13);
+  padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.contact-manager-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $primary-pink;
+  background: linear-gradient(90deg, $primary-pink 0%, $mint 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 16px $soft-pink;
+}
+
+.total-submissions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $dark-pink;
+  background: linear-gradient(90deg, $soft-pink 0%, $mint 100%);
+  border-radius: 18px;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 12px rgba(255, 62, 108, 0.09);
+  transition: $transition;
+  &:hover {
+    background: linear-gradient(90deg, $mint 0%, $soft-pink 100%);
+    color: $primary-pink;
+    box-shadow: 0 6px 24px rgba(255, 62, 108, 0.18);
+  }
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, $white 0%, $light-pink 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: box-shadow 0.3s;
+}
+
+.contact-table th,
+.contact-table td {
+  border-bottom: 1px solid $soft-pink;
+  padding: 1.1rem;
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-table th {
+  background: linear-gradient(90deg, $primary-pink 0%, $mint 100%);
+  color: $white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-bottom: 2px solid $primary-pink;
+  letter-spacing: 0.7px;
+}
+
+.contact-table tr {
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.contact-table tr:hover {
+  background: linear-gradient(90deg, $soft-pink 0%, $mint 100%);
+  box-shadow: 0 2px 12px rgba(255, 62, 108, 0.08);
+}
+
+.contact-table tr:nth-child(even) {
+  background: $light-pink;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact-actions button {
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, $primary-pink 0%, $mint 100%);
+  color: $white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 62, 108, 0.12);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  &:hover {
+    background: linear-gradient(90deg, $mint 0%, $primary-pink 100%);
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 6px 18px rgba(255, 62, 108, 0.18);
+  }
+  &:disabled {
+    background: $soft-pink;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.contact-actions button:last-child {
+  background: linear-gradient(90deg, #f87171 0%, $primary-pink 100%);
+  &:hover {
+    background: linear-gradient(90deg, $primary-pink 0%, #f87171 100%);
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.18);
+  }
+}
+
+input, textarea {
+  border: 1px solid $soft-pink;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: $light-pink;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+input:focus, textarea:focus {
+  border-color: $primary-pink;
+  box-shadow: 0 0 0 2px $soft-pink;
+}
+
+@media (max-width: 900px) {
+  .contact-manager-content {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .contact-table th,
+  .contact-table td {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+  .contact-manager-title {
+    font-size: 2rem;
+  }
+  .total-submissions {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

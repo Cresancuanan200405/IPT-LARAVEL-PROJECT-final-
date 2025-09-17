@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Variables (consistent with Home.scss)
+$primary-pink: #ff3e6c;
+$dark-pink: #d81b60;
+$light-pink: #fff0f5;
+$white: #ffffff;
+$shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$transition: all 0.3s ease;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: $transition;
+  @include flex-center;
+
+  // Default button style
+  background-color: $primary-pink;
+  color: $white;
+  box-shadow: $shadow;
+
+  &:hover {
+    background-color: $dark-pink;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 62, 108, 0.35);
+  }
+
+  // Secondary button variant
+  &.secondary-btn {
+    background-color: transparent;
+    color: $primary-pink;
+    border: 2px solid $primary-pink;
+
+    &:hover {
+      background-color: $primary-pink;
+      color: $white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(255, 62, 108, 0.2);
+    }
+  }
+
+  // CTA button variant
+  &.cta-button {
+    background-color: $white;
+    color: $primary-pink;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+
+    &:hover {
+      background-color: $light-pink;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
+
+    &.cta-button {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+
+    &.cta-button {
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
+    }
+  }
+}
