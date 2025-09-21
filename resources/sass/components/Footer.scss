@@ -1,12 +1,12 @@
 .footer {
-  text-align: center;
-  padding: 0.8rem;
-  background: linear-gradient(90deg, #7e3af2 0%, #4c51bf 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f8fafc;
   width: 100%;
-  font-size: 0.95rem;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 -2px 12px rgba(76, 81, 191, 0.09);
-  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 0.1rem 0; // reduced height (1rem / 1.4 ≈ 0.7rem)
+  background: #fff0f5;
+  color: #be185d;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 1rem;
+  border-top: 1px solid #ff9bb5;
 }

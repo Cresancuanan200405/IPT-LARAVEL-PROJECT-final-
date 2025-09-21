@@ -11,6 +11,7 @@ import ContactManager from './pages/ContactManager';
 
 import '../sass/app.scss';
 
+
 const AppContent = () => {
   const location = useLocation();
   const showFooter = location.pathname !== '/contacts/manage';
