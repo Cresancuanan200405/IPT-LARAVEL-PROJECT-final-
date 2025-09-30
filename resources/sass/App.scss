@@ -1,10 +1,8 @@
-@import 'components/Navbar';
-@import 'components/Footer';
-@import 'components/Button';
-@import 'components/Card';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-@import 'pages/Home';
-@import 'pages/About';
-@import 'pages/Contact';
-@import 'pages/ContactManager';
+// Variables
+@import 'variables';
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

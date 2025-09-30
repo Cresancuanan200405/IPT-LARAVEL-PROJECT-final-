@@ -1,46 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes React and other helpers. It's a great starting point while
+ * building robust, powerful web applications using React + Laravel.
+ */
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import ContactManager from './pages/ContactManager';
+require('./bootstrap');
 
-import '../sass/app.scss';
+/**
+ * Next, we will create a fresh React component instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
-
-const AppContent = () => {
-  const location = useLocation();
-  const showFooter = location.pathname !== '/contacts/manage';
-
-  return (
-    <>
-      <Navbar />
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contacts/manage" element={<ContactManager />} />
-        </Routes>
-      </main>
-      {showFooter && <Footer />}
-    </>
-  );
-};
-
-const App = () => (
-  <Router>
-    <AppContent />
-  </Router>
-);
-
-const rootElement = document.getElementById('app');
-if (rootElement) {
-  ReactDOM.render(<App />, rootElement);
-}
-
-<div id="app"></div>
+require('./components/Example');
